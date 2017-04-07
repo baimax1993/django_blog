@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load custom_markdown %}
+
+{% block content %}
+    <div class="article">
+      <h2><span>{{ post.title }}</span></h2>
+      <div class="clr"></div>
+      <p class="post-data"><span class="date">{{ post.datatime }}</span> &nbsp;|&nbsp; Posted by <a href="#">Owner</a> &nbsp;|&nbsp; tag:{{ post.catagory }}</a></p>
+      <img src="/static/images/images_1.jpg" width="209" height="238" alt="image" class="fl" />
+        <p>{{ post.preface|custom_markdown }}</p>
+        <p>{{ post.content|custom_markdown }}</p>
+      <p class="spec"><a href="#" class="com">Comments (3)</a></p>
+    <br /><br /><br /><br /><br />
+    </div>
+{% endblock %}

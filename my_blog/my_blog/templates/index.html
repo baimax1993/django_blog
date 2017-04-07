@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load custom_markdown %}
+
+{% block content %}
+    {% for post in post_list %}
+    <div class="article">
+      <h2><span>{{ post.title }}</span></h2>
+      <div class="clr"></div>
+      <p class="post-data"><span class="date">{{ post.datatime }}</span> &nbsp;|&nbsp; Posted by <a href="#">Owner</a> &nbsp;|&nbsp; Tag:{{ post.catagory }}</a></p>
+      <p>{{ post.preface|custom_markdown }} </p>
+      <p class="spec"><a href="#" class="com">Comments (3)</a> <a href="{% url 'detail' id=post.id %}" class="rm">Read more</a></p>
+    <br /><br /><br /><br /><br />
+    </div>
+    {% endfor %}
+{% endblock %}
